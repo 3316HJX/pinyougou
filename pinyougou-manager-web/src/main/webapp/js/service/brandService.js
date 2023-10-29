@@ -22,4 +22,7 @@ app.service("brandService", function ($http) {//构建前端服务层
     this.dele = function (Ids) {
         return $http.get('../brand/delete.do?ids=' + Ids)
     }
+    this.selectOptionList=function () {
+        return $http.get('../brand/selectOptionList.do')
+    }
 })

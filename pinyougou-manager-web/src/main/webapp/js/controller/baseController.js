@@ -30,6 +30,17 @@ app.controller('baseController', function ($scope) {//父控制器
 
 
     $scope.searchEntity = {};//定义搜索对象
-
+    //提取json中的数据
+    $scope.jsonToString=function (jsonString,key) {
+        var json=JSON.parse(jsonString);
+        var value="";
+        for (var i=0;i<json.length;i++){
+            if (i>0){
+                value+=",";
+            }
+            value+=json[i][key];
+        }
+        return value;
+    }
 
 });
