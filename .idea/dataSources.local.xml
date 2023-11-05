@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="dataSourceStorageLocal">
+  <component name="dataSourceStorageLocal" created-in="IU-231.8109.175">
     <data-source name="pinyougoudb@localhost" uuid="b72307a3-e271-4e28-b5cc-58df0ad3b4fa">
       <database-info product="MySQL" version="5.5.40" jdbc-version="4.2" driver-name="MySQL Connector/J" driver-version="mysql-connector-java-8.0.21 (Revision: 33f65445a1bcc544eb0120491926484da168f199)" dbms="MYSQL" exact-version="5.5.40" exact-driver-version="8.0">
         <extra-name-characters>#@</extra-name-characters>
