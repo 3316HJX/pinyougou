@@ -75,7 +75,7 @@ app.controller('goodsController', function ($scope, $controller, goodsService, u
     }
 
 $scope.image_entity={}
-    $scope.uploadImage = function () {
+    $scope.uploadImage = function () {//上传图片
         uploadService.upload().success(function (response) {
             if (response.error == 0) {
                 $scope.image_entity.url = response.url;

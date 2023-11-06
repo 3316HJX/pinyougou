@@ -1,10 +1,13 @@
 F:\Protect\pinyougou\pinyougou-manager-web\src\main\java\com\pinyougou\manager\controller\GoodsController.java
-F:\Protect\pinyougou\pinyougou-manager-web\src\main\java\com\pinyougou\manager\controller\GoodsDescController.java
 F:\Protect\pinyougou\pinyougou-manager-web\src\main\java\com\pinyougou\manager\controller\ItemController.java
 F:\Protect\pinyougou\pinyougou-manager-web\src\main\java\com\pinyougou\manager\controller\SpecificationOptionController.java
 F:\Protect\pinyougou\pinyougou-manager-web\src\main\java\com\pinyougou\manager\controller\TypeTemplateController.java
-F:\Protect\pinyougou\pinyougou-manager-web\src\main\java\com\pinyougou\manager\controller\ItemCatController.java
+F:\Protect\pinyougou\pinyougou-manager-web\src\main\java\com\pinyougou\manager\controller\ContentController.java
 F:\Protect\pinyougou\pinyougou-manager-web\src\main\java\com\pinyougou\manager\controller\SpecificationController.java
+F:\Protect\pinyougou\pinyougou-manager-web\src\main\java\com\pinyougou\manager\controller\UploadCotroller.java
+F:\Protect\pinyougou\pinyougou-manager-web\src\main\java\com\pinyougou\manager\controller\ContentCategoryController.java
+F:\Protect\pinyougou\pinyougou-manager-web\src\main\java\com\pinyougou\manager\controller\GoodsDescController.java
+F:\Protect\pinyougou\pinyougou-manager-web\src\main\java\com\pinyougou\manager\controller\ItemCatController.java
 F:\Protect\pinyougou\pinyougou-manager-web\src\main\java\com\pinyougou\manager\controller\SellerController.java
 F:\Protect\pinyougou\pinyougou-manager-web\src\main\java\com\pinyougou\manager\controller\BrandController.java
 F:\Protect\pinyougou\pinyougou-manager-web\src\main\java\com\pinyougou\manager\controller\LoginController.java
