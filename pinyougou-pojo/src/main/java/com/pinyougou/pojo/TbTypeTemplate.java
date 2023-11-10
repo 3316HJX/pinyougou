@@ -1,6 +1,9 @@
 package com.pinyougou.pojo;
 
+import org.springframework.stereotype.Service;
+
 import java.io.Serializable;
+
 
 public class TbTypeTemplate implements Serializable {
     private Long id;

@@ -3,8 +3,10 @@ package com.pinyougou.mapper;
 import com.pinyougou.pojo.TbTypeTemplate;
 import com.pinyougou.pojo.TbTypeTemplateExample;
 import org.apache.ibatis.annotations.Param;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
+
 
 public interface TbTypeTemplateMapper {
     int countByExample(TbTypeTemplateExample example);
