@@ -26,18 +26,21 @@ public class UserDetailsServiceImpl implements UserDetailsService {
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        System.out.println("经过了他");
+        System.out.println("经过了他!");
         //根据username查询数据库得到对象
         List<GrantedAuthority> authorities=new ArrayList<>();
         authorities.add(new SimpleGrantedAuthority("ROLE_USER"));
 
         TbSeller seller=sellerService.findOne(username);//根据登录名称查ID
         if (username==null){
+            System.out.println("返回null");
             return null;
         }else{
             if ("1".equals(seller.getStatus())){
+                System.out.println("查询到了");
             return new User(username,seller.getPassword(),authorities);
             }else{
+                System.out.println("null");
                 return  null;
             }
         }

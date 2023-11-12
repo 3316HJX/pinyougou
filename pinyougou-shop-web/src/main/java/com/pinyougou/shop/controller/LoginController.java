@@ -1,6 +1,7 @@
 package com.pinyougou.shop.controller;
 
 import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -8,8 +9,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * @author HJX
- * @create 2023-10-29 18:11
+ * Created by 37269 on 2018/7/25.
  */
 @RestController
 @RequestMapping("/login")
@@ -22,5 +22,6 @@ public class LoginController {
         map.put("loginName",name);
         return map;
     }
+
 
 }
