@@ -22,6 +22,8 @@
         <module>pinyougou-search-interface</module>
         <module>pinyougou-search-service</module>
         <module>pinyougou-search-web</module>
+
+
     </modules>
 
     <packaging>pom</packaging>

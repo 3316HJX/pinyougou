@@ -1,16 +1,14 @@
 package com.pinyougou.search.service.impl;
 
+import com.alibaba.dubbo.config.annotation.Service;
 import com.pinyougou.pojo.TbItem;
 import com.pinyougou.search.service.ItemSearchService;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.solr.core.SolrTemplate;
 import org.springframework.data.solr.core.query.Criteria;
 import org.springframework.data.solr.core.query.Query;
 import org.springframework.data.solr.core.query.SimpleQuery;
 import org.springframework.data.solr.core.query.result.ScoredPage;
-import org.springframework.stereotype.Service;
-
 
 import java.util.HashMap;
 import java.util.Map;
