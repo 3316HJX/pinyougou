@@ -2,6 +2,7 @@ package com.pinyougou.sellergoods.service;
 import java.util.List;
 import com.pinyougou.pojo.TbGoods;
 
+import com.pinyougou.pojo.TbItem;
 import com.pinyougou.pojogroup.Goods;
 import entity.PageResult;
 /**
@@ -58,5 +59,13 @@ public interface GoodsService {
 	 * @return
 	 */
 	public PageResult findPage(TbGoods goods, int pageNum, int pageSize);
-	
+
+	/**
+	 * 根据商品id查询sku列表
+	 * @param goodsIds
+	 * @return
+	 */
+	public List<TbItem> findItemListByGoodsId(Long[] goodsIds);
+
+	void  updateMarketabel(Long[] ids, String marketabel, String sellerId);
 }

@@ -1,16 +1,16 @@
 package com.pinyougou.sellergoods.service.impl;
+import java.util.Arrays;
 import java.util.List;
 
 import com.pinyougou.mapper.TbGoodsDescMapper;
-import com.pinyougou.pojo.TbGoodsDesc;
+import com.pinyougou.mapper.TbItemMapper;
+import com.pinyougou.pojo.*;
 import com.pinyougou.pojogroup.Goods;
 import org.springframework.beans.factory.annotation.Autowired;
 import com.alibaba.dubbo.config.annotation.Service;
 import com.github.pagehelper.Page;
 import com.github.pagehelper.PageHelper;
 import com.pinyougou.mapper.TbGoodsMapper;
-import com.pinyougou.pojo.TbGoods;
-import com.pinyougou.pojo.TbGoodsExample;
 import com.pinyougou.pojo.TbGoodsExample.Criteria;
 import com.pinyougou.sellergoods.service.GoodsService;
 
@@ -28,7 +28,8 @@ public class GoodsServiceImpl implements GoodsService {
 	private TbGoodsMapper goodsMapper;
 	@Autowired
 	private TbGoodsDescMapper goodsDescMapper;
-	
+	@Autowired
+	private TbItemMapper itemMapper;
 	/**
 	 * 查询全部
 	 */
@@ -128,5 +129,36 @@ public class GoodsServiceImpl implements GoodsService {
 		Page<TbGoods> page= (Page<TbGoods>)goodsMapper.selectByExample(example);		
 		return new PageResult(page.getTotal(), page.getResult());
 	}
-	
+
+	/**
+	 * 根据商品id查询sku列表
+	 * @param goodsIds
+	 * @return
+	 */
+	@Override
+	public List<TbItem> findItemListByGoodsId(Long[] goodsIds) {
+		TbItemExample example = new TbItemExample();
+		TbItemExample.Criteria criteria = example.createCriteria();
+		criteria.andGoodsIdIn(Arrays.asList(goodsIds));
+		criteria.andStatusEqualTo("1");
+
+		return itemMapper.selectByExample(example);
+	}
+
+	@Override
+	public void updateMarketabel(Long[] ids, String marketabel,String sellerId) {
+		//sellerId 如果为null，表示运营商后台调用此方法  ,不验证商家ID
+		for(Long id:ids){
+			TbGoods tbGoods=goodsMapper.selectByPrimaryKey(id);
+			if(!"1".equals(tbGoods.getAuditStatus()) &&  "1".equals(marketabel)){  //如果当前的操作是上架  并且当前商品未审核
+				continue;
+			}
+			if(!tbGoods.getSellerId().equals(sellerId) && sellerId!=null){
+				continue;
+			}
+			tbGoods.setIsMarketable(marketabel);
+			goodsMapper.updateByPrimaryKey(tbGoods);
+		}
+	}
+
 }
